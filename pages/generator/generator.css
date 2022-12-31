@@ -1,0 +1,92 @@
+.generator {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.genrator__main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+}
+
+.cvForm {
+  padding: 30px;
+  width: 92%;
+  margin: auto;
+}
+
+.form__title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.formTitle {
+  border: none;
+  font-size: 1.2rem;
+  outline: none;
+  text-align: center;
+  font-weight: bold;
+  transition: all 250ms ease-in-out;
+  position: relative;
+  background: none;
+}
+
+.formTitle:focus-within {
+  border: none;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 20px 0;
+  font-weight: 900;
+
+}
+
+.main__form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
+}
+
+.personal{
+    padding: 10px;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.full{
+    width: 96%;
+}
+.generator__right{
+    position: fixed;
+    right: 0;
+    background: #656e83;
+    width: 50%;
+    height: 100%;
+}
+
+.file__upload{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.file__upload i{
+    padding: 18px;
+    background:rgb(239, 242, 249);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+}
+
+.file__upload:hover{
+    color: var(--blue-400);
+}
