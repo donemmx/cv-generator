@@ -1,10 +1,13 @@
 import React, { useRef, useState } from "react";
 import { Editor } from "primereact/editor";
+import { Calendar } from "primereact/calendar";
 
 export default function index() {
   const [title, setTitle] = useState("Untitled");
   const [professional, setProfessional] = useState("");
-  let fixedData = {}
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  let fixedData = {};
   const [inputFields, setInputFields] = useState([
     {
       school: "",
@@ -12,7 +15,7 @@ export default function index() {
       city: "",
       startDate: "",
       endDate: "",
-    }
+    },
   ]);
   const titleChange = (e) => {
     e.preventDefault();
@@ -46,10 +49,7 @@ export default function index() {
       startDate: "",
       endDate: "",
     };
-    
-
   };
-
 
   const removeFields = (index) => {
     let data = [...inputFields];
@@ -160,59 +160,54 @@ export default function index() {
                 learnings and background will bring to job.
               </small>
               <div className="accordion pt-2">
-               
-                  <div className="accordion-tab" >
-                    <div className="main__form ">
+                <div className="accordion-tab">
+                  <div className="main__form ">
+                    <div className="form__group">
+                      <label htmlFor="">School</label>
+                      <input type="text" name="school" />
+                    </div>
+                    <div className="form__group">
+                      <label htmlFor="">Degree</label>
+                      <input type="text" name="degree" />
+                    </div>
+                    <div className="main__form">
                       <div className="form__group">
-                        <label htmlFor="">School</label>
-                        <input
-                          type="text"
-                          name="school"
-                        />
+                        <label htmlFor="">Start Date</label>
+
+                        <Calendar
+                          value={startDate}
+                          view="month"
+                          dateFormat="mm/yy"
+                          onChange={(e) => setStartDate(e.value)}
+                        ></Calendar>
                       </div>
                       <div className="form__group">
-                        <label htmlFor="">Degree</label>
-                        <input
-                          type="text"
-                          name="degree"
-                         
-                        />
-                      </div>
-                      <div className="form__group">
-                        <div className="form__group">
-                          <label htmlFor="">School</label>
-                          <input
-                            type="date"
-                            name="startDate"
-                          />
-                        </div>
-                        <div className="form__group">
-                          <label htmlFor="">School</label>
-                          <input
-                            type="date"
-                            name="endDate"
-                          />
-                        </div>
-                      </div>
-                      <div className="form__group">
-                        <label htmlFor="">City</label>
-                        <input
-                          type="text"
-                          name="city"
-                        />
+                        <label htmlFor="">End Date</label>
+                        <Calendar
+                          value={endDate}
+                          view="month"
+                          showButtonBar
+                          dateFormat="mm/yy"
+                          onChange={(e) => setEndDate(e.value)}
+                        ></Calendar>
                       </div>
                     </div>
-                    <div className="full__form pt-3">
-                      <div className="form__group">
-                        <Editor
-                          headerTemplate={header}
-                          style={{ height: "320px" }}
-                          value={professional}
-                          onTextChange={(e) => setProfessional(e.htmlValue)}
-                        />
-                      </div>
+                    <div className="form__group">
+                      <label htmlFor="">City</label>
+                      <input type="text" name="city" />
                     </div>
                   </div>
+                  <div className="full__form pt-3">
+                    <div className="form__group">
+                      <Editor
+                        headerTemplate={header}
+                        style={{ height: "320px" }}
+                        value={professional}
+                        onTextChange={(e) => setProfessional(e.htmlValue)}
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
               <button className="btn__small mt-2" onClick={addFields()}>
                 + Add one more employment

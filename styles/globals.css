@@ -160,6 +160,7 @@ input{
   border-radius: 4px 4px 0 0;
   outline: none;
   transition: all 250ms ease-in-out;
+  border: 1px solid #ced4da;
 }
 
 label{
@@ -189,4 +190,46 @@ input:focus-within{
 
 .p-accordion .p-accordion-header:not(.p-disabled) .p-accordion-header-link:focus{
   box-shadow: none !important;
+}
+
+.p-datepicker table, .p-link, .p-inputtext {
+  font-size: 0.8rem !important;
+}
+
+.p-datepicker table td {
+  padding: 0.1rem !important;
+}
+
+.p-datepicker{
+  width: 320px !important;
+}
+
+.p-datepicker table td > span {
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-year, .p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month{
+  padding: 0.2rem !important;
+}
+
+.p-calendar .p-inputtext {
+  background: #eff2f9 !important;
+}
+
+.p-datepicker .p-monthpicker .p-monthpicker-month{
+  padding: 0.3rem 0.1rem !important;
+  font-size: 0.8rem !important;
+}
+
+.p-datepicker{
+  max-width: 240px !important;
+}
+
+.p-button-label {
+  font-size: 0.8rem !important;
+}
+
+.p-datepicker .p-datepicker-buttonbar {
+  padding: 0.1rem 0 !important;
 }
