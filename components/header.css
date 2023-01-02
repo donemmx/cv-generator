@@ -14,7 +14,7 @@
 .header__logo{
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 1.2rem;
+    font-size: clamp(0.9rem, 2.5vw,1.2rem);
 }
 
 .header__main{
