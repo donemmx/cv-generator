@@ -11,11 +11,15 @@ import Languages from "../../components/forms/languages";
 
 export default function index() {
   const [title, setTitle] = useState("Untitled");
-
+  const [open, setOpen] = useState(false)
   const titleChange = (e) => {
     e.preventDefault();
     setTitle(e.target.value);
   };
+
+  const openTemplates = () => {
+    setOpen(() => !open)
+  }
 
   return (
     <div className="generator">
@@ -52,15 +56,15 @@ export default function index() {
             <Languages />
           </div>
         </div>
-        <div className="generator__right">
+        <div className={open ? 'generator__right w-70' : 'generator__right'}>
           <div className="preview">
-            <div className="preview__body"></div>
+            <div className={open ? "adjustedBody" :"preview__body"}></div>
           </div>
-          <div className="preview__panel">
+          <div className={open ? "preview__panel bg-black" : "preview__panel"}>
             <div className="preview_buttons">
-              <button className="btn__secondary">
-                <i className="pi pi-th-large"></i>
-                Select Template
+              <button className="btn__secondary" onClick={() => openTemplates()}>
+                <i className={open? "pi pi-times" : "pi pi-th-large"}></i>
+               {open ? 'Close':  "Select Template"}
               </button>
               <button className="btn__secondary">
                 <i className="pi pi-download"></i>
@@ -70,6 +74,29 @@ export default function index() {
           </div>
         </div>
       </div>
+      { open ? 
+      <div className="overlay__templates">
+        <div className="templates__main py-5">
+            <div className="small__templaes">
+            </div>
+            <div className="small__templaes">
+
+            </div>
+            <div className="small__templaes">
+            </div>
+            <div className="small__templaes">
+
+            </div>
+            <div className="small__templaes">
+            </div>
+            <div className="small__templaes">
+
+            </div>
+            
+        </div>
+      </div>
+        : ''  
+    }
     </div>
   );
 }
