@@ -172,4 +172,8 @@
         display: grid;
         grid-template-columns: repeat(1, 1fr);
       }
+
+      .p-dialog{
+        width: 90% !important;
+      }
 }
