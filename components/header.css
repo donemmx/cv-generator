@@ -36,3 +36,18 @@
         width: 90%;
     }
 }
+.btn__secondary{
+    position: relative;
+}
+
+.coming__soon{
+    position: absolute;
+    right: 0;
+    top: -10px;
+}
+
+.p-badge {
+    border-radius: 6px !important;
+    padding: 0 0.3rem !important;
+    font-size: 0.5rem !important;
+  }
