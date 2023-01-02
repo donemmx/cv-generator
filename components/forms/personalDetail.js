@@ -57,7 +57,6 @@ export default function personalDetail() {
           <div className="form__group">
             <div className="file__upload">
               <i className="pi pi-user"></i>
-              <label htmlFor="">Upload photo</label>
               <input
                 type="file"
                 onChange={(event) => handleImage(event)}
