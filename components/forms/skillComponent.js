@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AutoComplete } from "primereact/autocomplete";
 import { skills } from "../../pages/generator/skills";
 
@@ -13,6 +13,12 @@ export default function skillComponent() {
     });
     setFilteredSkill(_filteredSkills);
   };
+
+
+  useEffect(()=> {
+    let value = JSON.stringify(selectedSkill)
+    sessionStorage.setItem('skill', value)
+}, [selectedSkill])
 
 
   return (

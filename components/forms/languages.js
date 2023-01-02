@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Accordion, AccordionTab } from "primereact/accordion";
 import { Tooltip } from "primereact/tooltip";
 import { languageLevel } from "../../pages/generator/skills";
@@ -28,6 +28,11 @@ export default function languages() {
     setLangFields(data);
   };
   // End of Language Buttons
+
+  useEffect(()=> {
+    let value = JSON.stringify(langFields)
+    sessionStorage.setItem('language', value)
+}, [langFields])
 
   return (
     <div className="personal">

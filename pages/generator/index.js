@@ -8,6 +8,7 @@ import Skills from '../../components/forms/skillComponent'
 import Reference from '../../components/forms/reference'
 import Hobbies from '../../components/forms/hobbies'
 import Languages from '../../components/forms/languages'
+import Link from "next/link";
 
 
 
@@ -34,6 +35,7 @@ export default function index() {
                 id=""
               />
             </div>
+            <Link href='/'>Home</Link>
             {/* personal-details */}
             <PersonalDetails />
             {/* Professioanl Summary */}

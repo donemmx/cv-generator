@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Accordion, AccordionTab } from "primereact/accordion";
 import { Tooltip } from "primereact/tooltip";
 import moment from "moment";
@@ -8,10 +8,8 @@ export default function education() {
   const [eduFields, setEduFields] = useState([]);
 
   // Education Buttons
-
   const handleChangeInput = (index, event) => {
     let data = [...eduFields];
-    console.log(index, event.target.name);
     data[index][event.target.name] = event.target.value;
     setEduFields(data);
   };
@@ -35,6 +33,11 @@ export default function education() {
   };
 
 // End Of Education Buttons
+
+useEffect(()=> {
+  let value = JSON.stringify(eduFields)
+  sessionStorage.setItem('education', value)
+}, [eduFields])
 
 
   return  <div className="personal">

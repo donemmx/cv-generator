@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Accordion, AccordionTab } from "primereact/accordion";
 import { Tooltip } from "primereact/tooltip";
 import moment from "moment";
@@ -36,6 +36,13 @@ const handleWorkInput = (index, event) => {
 
 //   End of Work Buttons
 
+
+useEffect(()=> {
+    let value = JSON.stringify(workFields)
+    sessionStorage.setItem('employment', value)
+  }, [workFields])
+
+  
   return   <div className="personal">
   <div className="title">Employment History</div>
   <small className="pb-2">

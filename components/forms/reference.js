@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Accordion, AccordionTab } from "primereact/accordion";
 import { Tooltip } from "primereact/tooltip";
 
@@ -29,6 +29,12 @@ export default function reference() {
     setRefFields(data);
   };
   // End of Reference Buttons
+
+
+  useEffect(()=> {
+    let value = JSON.stringify(refFields)
+    sessionStorage.setItem('reference', value)
+}, [refFields])
 
   return (
     <div className="personal">

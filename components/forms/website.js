@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Accordion, AccordionTab } from "primereact/accordion";
 import { Tooltip } from "primereact/tooltip";
 
@@ -29,6 +29,10 @@ const handleLinksInput = (index, event) => {
   };
 // End of Links
 
+useEffect(()=> {
+    let value = JSON.stringify(linksFields)
+    sessionStorage.setItem('website', value)
+}, [linksFields])
 
   return (
     <div className="personal">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Editor } from "primereact/editor";
 
 export default function professioanalSumary() {
@@ -17,6 +17,11 @@ export default function professioanalSumary() {
   };
 
   const header = renderHeader();
+
+  useEffect(()=> {
+    let value = JSON.stringify(professional)
+    sessionStorage.setItem('professional', value)
+}, [professional])
 
   return (
     <div className="personal">

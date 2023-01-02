@@ -14,7 +14,6 @@ import "../components/forms/skillComponent"
 import "../components/forms/website"
 import "../components/forms/forms.css"
 
-import { RecoilRoot } from "recoil";
 import "primereact/resources/themes/lara-light-indigo/theme.css";  //theme
 import "primereact/resources/primereact.min.css";                  //core css
 import "primeicons/primeicons.css"; 
@@ -26,10 +25,8 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function App({ Component, pageProps }) {
   return (
-    <RecoilRoot>
       <main className={inter.className}>
       <Component {...pageProps} />
       </main>
-    </RecoilRoot>
   );
 }
