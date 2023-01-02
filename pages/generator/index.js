@@ -8,6 +8,8 @@ import Skills from "../../components/forms/skillComponent";
 import Reference from "../../components/forms/reference";
 import Hobbies from "../../components/forms/hobbies";
 import Languages from "../../components/forms/languages";
+import Colors from "../../components/forms/colors";
+
 
 export default function index() {
   const [title, setTitle] = useState("Untitled");
@@ -66,6 +68,7 @@ export default function index() {
                 <i className={open? "pi pi-times" : "pi pi-th-large"}></i>
                {open ? 'Close':  "Select Template"}
               </button>
+              <Colors />
               <button className="btn__secondary">
                 <i className="pi pi-download"></i>
                 Download

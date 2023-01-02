@@ -211,6 +211,53 @@
     color: var(--blue-500);
 }
 
+.colors{
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.btn__color{
+    cursor: pointer;
+    border: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    position: relative;
+    transition: all 250ms ease-in-out;
+}
+
+.btn__color:hover::after{
+    content: '';
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    background: #000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+
+.yellow{
+    background: #fff66d;
+}
+.green{
+    background: #4bfbba;
+}
+.blue{
+    background: #9aebfe;
+}
+.gold{
+    background: #fed78c;
+}
+.gray{
+    background: #e4e4e4;
+}
+
+
+
+
 @media screen and (max-width: 560px) {
     .deleteBtn {
         position: absolute;
