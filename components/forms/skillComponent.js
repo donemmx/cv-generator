@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { AutoComplete } from "primereact/autocomplete";
-import { skills } from "../../pages/generator/skills";
+import { skills } from "../skills";
 
 export default function skillComponent() {
     const [filteredSkill, setFilteredSkill] = useState();

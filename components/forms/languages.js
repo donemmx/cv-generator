@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Accordion, AccordionTab } from "primereact/accordion";
 import { Tooltip } from "primereact/tooltip";
-import { languageLevel } from "../../pages/generator/skills";
+import { languageLevel } from "../skills";
 
 export default function languages() {
   const [langFields, setLangFields] = useState([]);
