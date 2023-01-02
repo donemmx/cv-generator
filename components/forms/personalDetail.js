@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 export default function personalDetail() {
+  const [photo, setPhoto] = useState()
   const [details, setDetails] = useState([
     {
       title: "",
@@ -18,6 +19,13 @@ export default function personalDetail() {
       dateOfBirth: "",
     },
   ]);
+
+  const handleImage = (event) => {
+    let data = URL.createObjectURL(event.target.files[0])
+    setPhoto(data)
+    let value = JSON.stringify(photo)
+    sessionStorage.setItem('avatar', value)
+  };
 
   const handleChange = (event, index) => {
     let data = [...details];
@@ -50,6 +58,10 @@ export default function personalDetail() {
             <div className="file__upload">
               <i className="pi pi-user"></i>
               <label htmlFor="">Upload photo</label>
+              <input
+                type="file"
+                onChange={(event) => handleImage(event)}
+              />
             </div>
           </div>
           <div className="form__group">
@@ -126,34 +138,38 @@ export default function personalDetail() {
           </div>
           <div className="form__group">
             <label htmlFor="">Driving License</label>
-            <input type="text" 
-             name='drivingLicense'
-             value={value.drivingLicense}
-             onChange={(e) => handleChange(e, index)}
+            <input
+              type="text"
+              name="drivingLicense"
+              value={value.drivingLicense}
+              onChange={(e) => handleChange(e, index)}
             />
           </div>
           <div className="form__group">
             <label htmlFor="">Nationality</label>
-            <input type="text" 
-             name='nationality'
-             value={value.nationality}
-             onChange={(e) => handleChange(e, index)}
+            <input
+              type="text"
+              name="nationality"
+              value={value.nationality}
+              onChange={(e) => handleChange(e, index)}
             />
           </div>
           <div className="form__group">
             <label htmlFor="">Place Of Birth</label>
-            <input type="text" 
-             name='placeOfBirth'
-             value={value.placeOfBirth}
-             onChange={(e) => handleChange(e, index)}
+            <input
+              type="text"
+              name="placeOfBirth"
+              value={value.placeOfBirth}
+              onChange={(e) => handleChange(e, index)}
             />
           </div>
           <div className="form__group">
             <label htmlFor="">Date Of Birth</label>
-            <input type="date" 
-            name='dateOfBirth'
-            value={value.dateOfBirth}
-            onChange={(e) => handleChange(e, index)}
+            <input
+              type="date"
+              name="dateOfBirth"
+              value={value.dateOfBirth}
+              onChange={(e) => handleChange(e, index)}
             />
           </div>
         </div>

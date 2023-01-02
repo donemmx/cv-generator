@@ -13,6 +13,15 @@ import "../components/forms/reference"
 import "../components/forms/skillComponent"
 import "../components/forms/website"
 import "../components/forms/forms.css"
+import "../components/cv-templates/templateOne"
+import "../components/cv-templates/templateTwo"
+import "../components/cv-templates/templateThree"
+import "../components/cv-templates/templateFour"
+import "../components/cv-templates/templateOne.css"
+import "../components/cv-templates/templateTwo.css"
+import "../components/cv-templates/templateThree.css"
+import "../components/cv-templates/templateFour.css"
+
 
 import "primereact/resources/themes/lara-light-indigo/theme.css";  //theme
 import "primereact/resources/primereact.min.css";                  //core css

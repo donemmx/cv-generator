@@ -224,3 +224,16 @@
 .grouped__accordion:hover .headerTitle{
     color: var(--blue-500);
 }
+
+@media screen and (max-width: 560px) {
+    .deleteBtn {
+        position: absolute;
+        top: 10px;
+        right: -40px;
+        visibility:visible;
+      }
+      .main__form{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+      }
+}
