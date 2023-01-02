@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 export default function colors() {
-const [color, setColor] = useState('black')
+const [color, setColor] = useState('')
 
     const handleColor = (e) => {
         setColor(e)
