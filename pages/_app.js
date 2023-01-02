@@ -3,6 +3,17 @@ import '../components/header.css'
 import '../components/footer.css'
 import '../components/hero/hero.css'
 import "../pages/generator/generator.css";
+import "../components/forms/education"
+import "../components/forms/employmentHistory"
+import "../components/forms/hobbies"
+import "../components/forms/languages"
+import "../components/forms/personalDetail"
+import "../components/forms/professioanalSumary"
+import "../components/forms/reference"
+import "../components/forms/skillComponent"
+import "../components/forms/website"
+import "../components/forms/forms.css"
+
 import { RecoilRoot } from "recoil";
 import "primereact/resources/themes/lara-light-indigo/theme.css";  //theme
 import "primereact/resources/primereact.min.css";                  //core css

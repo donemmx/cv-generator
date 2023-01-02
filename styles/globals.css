@@ -14,6 +14,13 @@ body{
 :root{
 }
 
+.w-1 {
+  width: 100px !important;
+}
+
+.w-2 {
+  width: 200px !important;
+}
 
 .pt-1 {
   padding-top: 10px;
@@ -135,6 +142,12 @@ body{
   width: fit-content;
   border: none;
   cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+
+.btn__secondary:hover{
+  background: var(--blue-400);
+  color: var(--gray-100);
 }
 
 .btn__small{
@@ -146,6 +159,7 @@ body{
   color: grey;
   transition: all 250ms ease-in-out;
   cursor: pointer;
+  width: fit-content;
 }
 
 .btn__small:hover{
@@ -153,21 +167,22 @@ body{
   color: var(--gray-700);
 }
 
-input{
-  border: none;
+input, textarea, select{
   padding: 12px;
   background:rgb(239, 242, 249);
   border-radius: 4px 4px 0 0;
   outline: none;
   transition: all 250ms ease-in-out;
   border: 1px solid #ced4da;
+  resize: none;
+  width: 100%;
 }
 
 label{
   font-size: 0.8rem;
 }
 
-input:focus-within{
+input:focus-within, textarea:focus-within{
   border-bottom: 2px solid var(--blue-400);
 }
 
@@ -232,4 +247,24 @@ input:focus-within{
 
 .p-datepicker .p-datepicker-buttonbar {
   padding: 0.1rem 0 !important;
+}
+
+.p-component-overlay {
+  background: #000000d6 !important;
+}
+
+.p-autocomplete-multiple-container{
+  width: 100% !important;
+} 
+
+.p-accordion .p-accordion-header .p-accordion-header-link {
+  padding: 1rem !important;
+}
+
+.pi-chevron-right::before {
+  font-size: 0.7rem !important;
+}
+
+.p-autocomplete-item{
+  font-size: 0.85rem !important;
 }
