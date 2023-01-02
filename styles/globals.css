@@ -139,6 +139,9 @@ body{
   color: black;
   font-size: 0.8rem;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   width: fit-content;
   border: none;
   cursor: pointer;
