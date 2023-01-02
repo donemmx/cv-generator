@@ -8,12 +8,12 @@ export default function header() {
       <div className="header__main">
         <div className="header__logo">Cv Generator</div>
         <div className="header__links">
-          <Link className="btn__secondary" href="/cover-letter">
+          <div className="btn__secondary">
             <div className="coming__soon">
               <Badge value="coming soon" severity="danger"></Badge>
             </div>
             Cover Letter
-          </Link>
+          </div>
           <Link className="btn__primary" href="/generator">
             Resume
           </Link>
