@@ -9,24 +9,54 @@ import Reference from "../../components/forms/reference";
 import Hobbies from "../../components/forms/hobbies";
 import Languages from "../../components/forms/languages";
 import Colors from "../../components/forms/colors";
-
+import { Dialog } from "primereact/dialog";
+import { useRouter } from "next/router";
 
 export default function index() {
   const [title, setTitle] = useState("Untitled");
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
+  const [visible, setVisible] = useState(false);
+  const router = useRouter();
+  const onHide = () => {
+    setVisible(!visible);
+  };
+
+  const route = () => {
+    router.push('/')
+  }
   const titleChange = (e) => {
     e.preventDefault();
     setTitle(e.target.value);
   };
 
   const openTemplates = () => {
-    setOpen(() => !open)
-  }
+    setOpen(() => !open);
+  };
 
   return (
     <div className="generator">
       <div className="genrator__main">
         <div className="generator__left">
+          <button className="btn__secondary fixed__icon" onClick={() => onHide()}>
+            <i className="pi pi-home"></i> Home
+          </button>
+          <Dialog
+            visible={visible}
+            style={{ width: "35%" }}
+            modal
+            onHide={onHide}
+          >
+            <div className="modal__body">
+                <div className="modal__text">
+                    You will lose all the data in this form. <br/>
+                    Are you sure you want to go back?
+                </div>
+                <div className="btn__group mt-2">
+                    <button className="btn__secondary w-1" onClick={() => onHide()}>No</button>
+                    <button className="btn__secondary w-1" onClick={()=> route()}>Yes</button>
+                </div>
+            </div>
+          </Dialog>
           <div className="cvForm">
             <div className="form__title">
               <input
@@ -58,15 +88,18 @@ export default function index() {
             <Languages />
           </div>
         </div>
-        <div className={open ? 'generator__right w-70' : 'generator__right'}>
+        <div className={open ? "generator__right w-70" : "generator__right"}>
           <div className="preview">
-            <div className={open ? "adjustedBody" :"preview__body"}></div>
+            <div className={open ? "adjustedBody" : "preview__body"}></div>
           </div>
           <div className={open ? "preview__panel bg-black" : "preview__panel"}>
             <div className="preview_buttons">
-              <button className="btn__secondary" onClick={() => openTemplates()}>
-                <i className={open? "pi pi-times" : "pi pi-th-large"}></i>
-               {open ? 'Close':  "Select Template"}
+              <button
+                className="btn__secondary"
+                onClick={() => openTemplates()}
+              >
+                <i className={open ? "pi pi-times" : "pi pi-th-large"}></i>
+                {open ? "Close" : "Select Template"}
               </button>
               <Colors />
               <button className="btn__secondary">
@@ -77,29 +110,20 @@ export default function index() {
           </div>
         </div>
       </div>
-      { open ? 
-      <div className="overlay__templates">
-        <div className="templates__main py-5">
-            <div className="small__templaes">
-            </div>
-            <div className="small__templaes">
-
-            </div>
-            <div className="small__templaes">
-            </div>
-            <div className="small__templaes">
-
-            </div>
-            <div className="small__templaes">
-            </div>
-            <div className="small__templaes">
-
-            </div>
-            
+      {open ? (
+        <div className="overlay__templates">
+          <div className="templates__main py-5">
+            <div className="small__templaes"></div>
+            <div className="small__templaes"></div>
+            <div className="small__templaes"></div>
+            <div className="small__templaes"></div>
+            <div className="small__templaes"></div>
+            <div className="small__templaes"></div>
+          </div>
         </div>
-      </div>
-        : ''  
-    }
+      ) : (
+        ""
+      )}
     </div>
   );
 }

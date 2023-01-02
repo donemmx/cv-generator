@@ -16,6 +16,9 @@ body{
 
 .w-1 {
   width: 100px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .w-2 {
