@@ -277,7 +277,7 @@ input:focus-within, textarea:focus-within{
 
 
 @media print {
-  @page { size: landscape;
+  @page { 
       size: 80mm 50mm;
   }
   .pagebreak {

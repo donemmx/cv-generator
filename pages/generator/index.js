@@ -13,6 +13,7 @@ import Colors from "../../components/forms/colors";
 import { useRouter } from "next/router";
 import { useReactToPrint } from "react-to-print";
 import TemplateOne from "../../components/cv-templates/templateOne";
+import TemplateTwo from "../../components/cv-templates/templateTwo";
 
 export default function index() {
   const componentRef = useRef();
@@ -110,7 +111,7 @@ export default function index() {
         <div className={open ? "generator__right w-70" : "generator__right"}>
           <div className="preview">
             <div className={open ? "adjustedBody" : "preview__body"}>
-              <TemplateOne condition={open} ref={componentRef} />
+              <TemplateTwo condition={open} ref={componentRef} />
             </div>
           </div>
           <div className={open ? "preview__panel bg-black" : "preview__panel"}>
