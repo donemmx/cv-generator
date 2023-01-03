@@ -230,3 +230,9 @@
     font-size: 0.4rem;
 }
 
+.title{
+    color: #000 !important;
+    font-weight: 900 !important;
+    letter-spacing: 0px !important;
+}
+

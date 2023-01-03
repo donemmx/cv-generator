@@ -64,7 +64,7 @@ const templateOne = React.forwardRef(({condition}, ref) => {
                     borderColor: colors[0] ?? "#5695cd",
                   }}
                 ></i>
-                <h2>Professional Summary</h2>
+                <h2 className="title">Professional Summary</h2>
               </div>
               <div className="other">
                 <div className="other-info">
@@ -78,7 +78,7 @@ const templateOne = React.forwardRef(({condition}, ref) => {
               <div className="resume__section-title">
                 <i className="pi pi-briefcase"
                style={{backgroundColor: colors[0] ?? '#5695cd', borderColor: colors[0] ?? '#5695cd'}}></i>
-                <h2>Education</h2>
+                <h2 className="title">Education</h2>
               </div>
               {education[0].map((value, index) => (
                 <div className="xp-item" key={index}>
@@ -115,7 +115,7 @@ const templateOne = React.forwardRef(({condition}, ref) => {
                     borderColor: colors[0] ?? "#5695cd",
                   }}
                 ></i>
-                <h2>Employment History</h2>
+                <h2 className="title">Employment History</h2>
               </div>
               {employment[0].map((value, index) => (
                 <div className="xp-item" key={index}>
@@ -148,7 +148,7 @@ const templateOne = React.forwardRef(({condition}, ref) => {
               <div className="resume__section-title">
                 <i className="pi pi-link"
                style={{backgroundColor: colors[0] ?? '#5695cd', borderColor: colors[0] ?? '#5695cd'}}></i>
-                <h2>Socials and Links</h2>
+                <h2 className="title">Socials and Links</h2>
               </div>
               {website[0].map((value, index) => (
                 <div className="xp-item" key={index}>
@@ -178,7 +178,7 @@ const templateOne = React.forwardRef(({condition}, ref) => {
                     borderColor: colors[0] ?? "#5695cd",
                   }}
                 ></i>
-                <h2>Hobby</h2>
+                <h2 className="title">Hobby</h2>
               </div>
               <div className="other">
                 <div className="other-info">
@@ -218,7 +218,7 @@ const templateOne = React.forwardRef(({condition}, ref) => {
               <div className="resume__section-title">
                 <i className="pi pi-globe"
                 style={{backgroundColor: colors[0] ?? '#5695cd', borderColor: colors[0] ?? '#5695cd'}}></i>
-                <h2>Languages</h2>
+                <h2 className="title">Languages</h2>
               </div>
               {language[0].map((value, index) => (
                 <div className="extra" key={index}>
