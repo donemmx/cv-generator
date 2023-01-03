@@ -14,6 +14,7 @@ const templateOne = React.forwardRef(({condition}, ref) => {
   const { skill, setSkill } = useContext(AppContext);
   const { education, setEducation } = useContext(AppContext);
   const { reference, setReference } = useContext(AppContext);
+  const { pic, setPic } = useContext(AppContext);
   let safeHtml = DOMPurify.sanitize(summary[0]);
   return (
     <div ref={ref}

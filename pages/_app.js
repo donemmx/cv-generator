@@ -34,6 +34,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function App({ Component, pageProps }) {
   const [employment, setEmployment] = useState([]);
   const [education, setEducation] = useState([]);
+  const [pic, setPic] = useState();
   const [website, setWebsite] = useState([]);
   const [skill, setSkill] = useState([]);
   const [reference, setReference] = useState([]);
@@ -71,6 +72,7 @@ export default function App({ Component, pageProps }) {
         hobbies: [hobbies, setHobbbies],
         colors: [colors, setColors],
         language: [language, setLanguage],
+        pic: [pic, setPic],
       }}
     >
       <main className={inter.className}>

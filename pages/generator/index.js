@@ -111,7 +111,7 @@ export default function index() {
         <div className={open ? "generator__right w-70" : "generator__right"}>
           <div className="preview">
             <div className={open ? "adjustedBody" : "preview__body"}>
-              <TemplateTwo condition={open} ref={componentRef} />
+              <TemplateOne condition={open} ref={componentRef} />
             </div>
           </div>
           <div className={open ? "preview__panel bg-black" : "preview__panel"}>

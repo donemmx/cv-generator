@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import AppContext from "../../context/AppContext";
 
 export default function personalDetail() {
-  const [photo, setPhoto] = useState()
+  const { pic, setPic } = useContext(AppContext);
+  const [photo, setPhoto] = pic
   const { personal, setPersonal } = useContext(AppContext);
   const [details, setDetails] = personal
 
