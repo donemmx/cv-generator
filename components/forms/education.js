@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Accordion, AccordionTab } from "primereact/accordion";
 import { Tooltip } from "primereact/tooltip";
 import moment from "moment";
+import AppContext from "../../context/AppContext";
 
 
 export default function education() {
-  const [eduFields, setEduFields] = useState([]);
+
+  const { education, setEducation } = useContext(AppContext);
+  const [eduFields, setEduFields] = education;
 
   // Education Buttons
   const handleChangeInput = (index, event) => {
@@ -33,12 +36,6 @@ export default function education() {
   };
 
 // End Of Education Buttons
-
-useEffect(()=> {
-  let value = JSON.stringify(eduFields)
-  sessionStorage.setItem('education', value)
-}, [eduFields])
-
 
   return  <div className="personal">
   <div className="title">Education</div>

@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Accordion, AccordionTab } from "primereact/accordion";
 import { Tooltip } from "primereact/tooltip";
 import { languageLevel } from "../skills";
+import AppContext from "../../context/AppContext";
 
 export default function languages() {
-  const [langFields, setLangFields] = useState([]);
+  const { language, setLanguage } = useContext(AppContext);
+  const [langFields, setLangFields] = language;
 
   //   Language Buttons
   const handleLangInput = (index, event) => {
@@ -29,10 +31,10 @@ export default function languages() {
   };
   // End of Language Buttons
 
-  useEffect(()=> {
-    let value = JSON.stringify(langFields)
-    sessionStorage.setItem('language', value)
-}, [langFields])
+  useEffect(() => {
+    let value = JSON.stringify(langFields);
+    sessionStorage.setItem("language", value);
+  }, [langFields]);
 
   return (
     <div className="personal">

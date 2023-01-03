@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import PersonalDetails from "../../components/forms/personalDetail";
 import ProfessionalSummary from "../../components/forms/professioanalSumary";
 import Education from "../../components/forms/education";
@@ -11,8 +11,11 @@ import Languages from "../../components/forms/languages";
 import Colors from "../../components/forms/colors";
 import { Dialog } from "primereact/dialog";
 import { useRouter } from "next/router";
+import { useReactToPrint } from 'react-to-print';
+import TemplateOne from "../../components/cv-templates/templateOne";
 
 export default function index() {
+    const componentRef = useRef();
   const [title, setTitle] = useState("Untitled");
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(false);
@@ -22,8 +25,8 @@ export default function index() {
   };
 
   const route = () => {
-    router.push('/')
-  }
+    router.push("/");
+  };
   const titleChange = (e) => {
     e.preventDefault();
     setTitle(e.target.value);
@@ -33,11 +36,19 @@ export default function index() {
     setOpen(() => !open);
   };
 
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
+
+
   return (
     <div className="generator">
       <div className="genrator__main">
         <div className="generator__left">
-          <button className="btn__secondary fixed__icon" onClick={() => onHide()}>
+          <button
+            className="btn__secondary fixed__icon"
+            onClick={() => onHide()}
+          >
             <i className="pi pi-home"></i> Home
           </button>
           <Dialog
@@ -47,14 +58,18 @@ export default function index() {
             onHide={onHide}
           >
             <div className="modal__body">
-                <div className="modal__text">
-                    You will lose all the data in this form. <br/>
-                    Are you sure you want to go back?
-                </div>
-                <div className="btn__group mt-2">
-                    <button className="btn__secondary w-1" onClick={() => onHide()}>No</button>
-                    <button className="btn__secondary w-1" onClick={()=> route()}>Yes</button>
-                </div>
+              <div className="modal__text">
+                You will lose all the data in this form. <br />
+                Are you sure you want to go back?
+              </div>
+              <div className="btn__group mt-2">
+                <button className="btn__secondary w-1" onClick={() => onHide()}>
+                  No
+                </button>
+                <button className="btn__secondary w-1" onClick={() => route()}>
+                  Yes
+                </button>
+              </div>
             </div>
           </Dialog>
           <div className="cvForm">
@@ -90,7 +105,9 @@ export default function index() {
         </div>
         <div className={open ? "generator__right w-70" : "generator__right"}>
           <div className="preview">
-            <div className={open ? "adjustedBody" : "preview__body"}></div>
+            <div className={open ? "adjustedBody" : "preview__body"}>
+                <TemplateOne condition={open} />
+            </div>
           </div>
           <div className={open ? "preview__panel bg-black" : "preview__panel"}>
             <div className="preview_buttons">

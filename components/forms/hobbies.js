@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import AppContext from "../../context/AppContext";
 
 export default function hobbies() {
-    const [hobby, setHobbby] = useState('')
+    const { hobbies, setHobbbies } = useContext(AppContext);
+    const [hobby, setHobbby] = hobbies
 
     const handleHobby = (e) => {
         setHobbby(e.target.value)

@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Editor } from "primereact/editor";
+import AppContext from '../../context/AppContext';
 
 export default function professioanalSumary() {
-  const [professional, setProfessional] = useState("");
+
+  const { summary, setSummary } = useContext(AppContext);
+  const [professional, setProfessional] = summary;
 
   const renderHeader = () => {
     return (

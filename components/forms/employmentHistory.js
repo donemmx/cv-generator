@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Accordion, AccordionTab } from "primereact/accordion";
 import { Tooltip } from "primereact/tooltip";
 import moment from "moment";
-
+import AppContext from "../../context/AppContext";
 export default function employmentHistory() {
-  const [workFields, setWorkFields] = useState([]);
 
+  const { employment, setEmployment } = useContext(AppContext);
+  const [workFields, setWorkFields] = employment
 
 //   Work Buttons
 
@@ -37,10 +38,6 @@ const handleWorkInput = (index, event) => {
 //   End of Work Buttons
 
 
-useEffect(()=> {
-    let value = JSON.stringify(workFields)
-    sessionStorage.setItem('employment', value)
-  }, [workFields])
 
   
   return   <div className="personal">

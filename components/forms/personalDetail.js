@@ -1,24 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import AppContext from "../../context/AppContext";
 
 export default function personalDetail() {
   const [photo, setPhoto] = useState()
-  const [details, setDetails] = useState([
-    {
-      title: "",
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      country: "",
-      city: "",
-      address: "",
-      postalCode: "",
-      drivingLicense: "",
-      nationality: "",
-      placeOfBirth: "",
-      dateOfBirth: "",
-    },
-  ]);
+  const { personal, setPersonal } = useContext(AppContext);
+  const [details, setDetails] = personal
 
   const handleImage = (event) => {
     let data = URL.createObjectURL(event.target.files[0])
