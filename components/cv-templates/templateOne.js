@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import AppContext from "../../context/AppContext";
 import DOMPurify from "isomorphic-dompurify";
+import moment from "moment";
 
 export default function templateOne({ condition }) {
   const { employment, setEmployment } = useContext(AppContext);
@@ -28,19 +29,22 @@ export default function templateOne({ condition }) {
             </h1>
             <div className="info-item">
               <span className="info-label">
-                <i className="pi pi-map"></i>
+                <i className="pi pi-map"
+                style={{color: colors[0] ?? '#5695cd'}}></i>
               </span>
               <span className="info-text">{value.address}</span>
             </div>
             <div className="info-item">
               <span className="info-label">
-                <i className="pi pi-envelope"></i>
+                <i className="pi pi-envelope"
+               style={{color: colors[0] ?? '#5695cd'}}></i>
               </span>
               <span className="info-text">{value.email}</span>
             </div>
             <div className="info-item">
               <span className="info-label">
-                <i className="pi pi-phone"></i>
+                <i className="pi pi-phone"
+               style={{color: colors[0] ?? '#5695cd'}}></i>
               </span>
               <span className="info-text">{value.phone}</span>
             </div>
@@ -52,7 +56,13 @@ export default function templateOne({ condition }) {
           <section className="resume__section resume__summary">
             <div className="resume__content">
               <div className="resume__section-title">
-                <i className="fa fa-pencil-square-o"></i>
+                <i
+                  className="pi pi-pencil"
+                  style={{
+                    backgroundColor: colors[0] ?? "#5695cd",
+                    borderColor: colors[0] ?? "#5695cd",
+                  }}
+                ></i>
                 <h2>Professional Summary</h2>
               </div>
               <div className="other">
@@ -65,32 +75,8 @@ export default function templateOne({ condition }) {
           <section className="resume__section resume__experience">
             <div className="resume__content">
               <div className="resume__section-title">
-                <i className="fa fa-briefcase"></i>
-                <h2>Employment History</h2>
-              </div>
-              {employment[0].map((value, index) => (
-                <div className="xp-item" key={index}>
-                  <div className="xp-job">
-                    {value.title}
-                    <br />
-                    <span>{value.employer}</span>
-                  </div>
-                  <div className="xp-date">
-                    {value.startDate} – {value.endDate}
-                  </div>
-                  <div className="xp-detail">
-                    <ul>
-                      <li>{value.description}</li>
-                    </ul>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-          <section className="resume__section resume__experience">
-            <div className="resume__content">
-              <div className="resume__section-title">
-                <i className="fa fa-briefcase"></i>
+                <i className="pi pi-briefcase"
+               style={{backgroundColor: colors[0] ?? '#5695cd', borderColor: colors[0] ?? '#5695cd'}}></i>
                 <h2>Education</h2>
               </div>
               {education[0].map((value, index) => (
@@ -100,8 +86,14 @@ export default function templateOne({ condition }) {
                     <br />
                     <span>{value.degree}</span>
                   </div>
-                  <div className="xp-date">
-                    {value.startDate} – {value.endDate}
+                  <div className="xp-date"
+                   style={{
+                    color: colors[0] ?? "#5695cd",
+                  }}>
+                  {moment(value.startDate).format(
+                        "MMMM YYYY"
+                      )}
+                      - {moment(value.endDate).format("MMMM YYYY")}
                   </div>
                   <div className="xp-detail">
                     <ul>
@@ -115,18 +107,85 @@ export default function templateOne({ condition }) {
           <section className="resume__section resume__experience">
             <div className="resume__content">
               <div className="resume__section-title">
-                <i className="fa fa-briefcase"></i>
+                <i
+                  className="pi pi-building"
+                  style={{
+                    backgroundColor: colors[0] ?? "#5695cd",
+                    borderColor: colors[0] ?? "#5695cd",
+                  }}
+                ></i>
+                <h2>Employment History</h2>
+              </div>
+              {employment[0].map((value, index) => (
+                <div className="xp-item" key={index}>
+                  <div className="xp-job">
+                    {value.title}
+                    <br />
+                    <span>{value.employer}</span>
+                  </div>
+                  <div className="xp-date" 
+                  style={{
+                    color: colors[0] ?? "#5695cd",
+                  }}>
+                  {moment(value.startDate).format(
+                        "MMMM YYYY"
+                      )}
+                      - {moment(value.endDate).format("MMMM YYYY")}
+                  </div>
+                  <div className="xp-detail">
+                    <ul>
+                      <li>{value.description}</li>
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+          
+          <section className="resume__section resume__experience">
+            <div className="resume__content">
+              <div className="resume__section-title">
+                <i className="pi pi-link"
+               style={{backgroundColor: colors[0] ?? '#5695cd', borderColor: colors[0] ?? '#5695cd'}}></i>
                 <h2>Socials and Links</h2>
               </div>
               {website[0].map((value, index) => (
                 <div className="xp-item" key={index}>
                   <div className="xp-job">
                     {value.label}
-                    <br/>
-                    <a className="social__link" href={value.link} target='_blank'>{value.link}</a>
+                    <br />
+                    <a
+                      className="social__link"
+                      href={value.link}
+                      target="_blank"
+                    >
+                      {value.link}
+                    </a>
                   </div>
                 </div>
               ))}
+            </div>
+          </section>
+
+          <section className="resume__section resume__summary">
+            <div className="resume__content">
+              <div className="resume__section-title">
+                <i
+                  className="pi pi-qrcode"
+                  style={{
+                    backgroundColor: colors[0] ?? "#5695cd",
+                    borderColor: colors[0] ?? "#5695cd",
+                  }}
+                ></i>
+                <h2>Hobby</h2>
+              </div>
+              <div className="other">
+                <div className="other-info">
+                  <div>
+                    {hobbies[0]}
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
         </div>
@@ -134,7 +193,8 @@ export default function templateOne({ condition }) {
           <section className="resume__section resume__skills">
             <div className="resume__content">
               <div className="resume__section-title">
-                <i className="fa fa-align-center"></i>
+                <i className="pi pi-align-center"
+               style={{backgroundColor: colors[0] ?? '#5695cd', borderColor: colors[0] ?? '#5695cd'}}></i>
                 <h2>Skills</h2>
               </div>
               {skill[0].map((value, index) => (
@@ -155,7 +215,8 @@ export default function templateOne({ condition }) {
           <section className="resume__section resume__languages">
             <div className="resume__content">
               <div className="resume__section-title">
-                <i className="fa fa-globe"></i>
+                <i className="pi pi-globe"
+                style={{backgroundColor: colors[0] ?? '#5695cd', borderColor: colors[0] ?? '#5695cd'}}></i>
                 <h2>Languages</h2>
               </div>
               {language[0].map((value, index) => (
@@ -163,7 +224,7 @@ export default function templateOne({ condition }) {
                   <div className="extra-info">
                     {value.language}
                     <br></br>
-                     <small>{value.level}</small>
+                    <small>{value.level}</small>
                   </div>
                   <div className="extra-details">
                     <div
@@ -176,6 +237,7 @@ export default function templateOne({ condition }) {
             </div>
           </section>
         </div>
+      
       </div>
     </div>
   );

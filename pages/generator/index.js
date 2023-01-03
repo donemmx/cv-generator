@@ -9,7 +9,7 @@ import Reference from "../../components/forms/reference";
 import Hobbies from "../../components/forms/hobbies";
 import Languages from "../../components/forms/languages";
 import Colors from "../../components/forms/colors";
-import { Dialog } from "primereact/dialog";
+// import { Dialog } from "primereact/dialog";
 import { useRouter } from "next/router";
 import { useReactToPrint } from 'react-to-print';
 import TemplateOne from "../../components/cv-templates/templateOne";
@@ -18,11 +18,11 @@ export default function index() {
     const componentRef = useRef();
   const [title, setTitle] = useState("Untitled");
   const [open, setOpen] = useState(false);
-  const [visible, setVisible] = useState(false);
+//   const [visible, setVisible] = useState(false);
   const router = useRouter();
-  const onHide = () => {
-    setVisible(!visible);
-  };
+//   const onHide = () => {
+//     setVisible(!visible);
+//   };
 
   const route = () => {
     router.push("/");
@@ -47,11 +47,11 @@ export default function index() {
         <div className="generator__left">
           <button
             className="btn__secondary fixed__icon"
-            onClick={() => onHide()}
+            onClick={() => route()}
           >
             <i className="pi pi-home"></i> Home
           </button>
-          <Dialog
+          {/* <Dialog
             visible={visible}
             style={{ width: "35%" }}
             modal
@@ -71,7 +71,7 @@ export default function index() {
                 </button>
               </div>
             </div>
-          </Dialog>
+          </Dialog> */}
           <div className="cvForm">
             <div className="form__title">
               <input
