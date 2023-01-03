@@ -19,11 +19,6 @@ export default function personalDetail() {
     setDetails(data);
   };
 
-  useEffect(() => {
-    let value = JSON.stringify(details);
-    sessionStorage.setItem("personal", value);
-  }, [details]);
-
   return (
     <div className="personal">
       <div className="title">Personal Details</div>

@@ -7,6 +7,7 @@ export default function templateOne({ condition }) {
   const { summary, setSummary } = useContext(AppContext);
   const { personal, setPersonal } = useContext(AppContext);
   const { hobbies, setHobbbies } = useContext(AppContext);
+  const { website, setWebsite } = useContext(AppContext);
   const { colors, setColors } = useContext(AppContext);
   const { language, setLanguage } = useContext(AppContext);
   const { skill, setSkill } = useContext(AppContext);
@@ -81,6 +82,48 @@ export default function templateOne({ condition }) {
                     <ul>
                       <li>{value.description}</li>
                     </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+          <section className="resume__section resume__experience">
+            <div className="resume__content">
+              <div className="resume__section-title">
+                <i className="fa fa-briefcase"></i>
+                <h2>Education</h2>
+              </div>
+              {education[0].map((value, index) => (
+                <div className="xp-item" key={index}>
+                  <div className="xp-job">
+                    {value.school}
+                    <br />
+                    <span>{value.degree}</span>
+                  </div>
+                  <div className="xp-date">
+                    {value.startDate} – {value.endDate}
+                  </div>
+                  <div className="xp-detail">
+                    <ul>
+                      <li>{value.description}</li>
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+          <section className="resume__section resume__experience">
+            <div className="resume__content">
+              <div className="resume__section-title">
+                <i className="fa fa-briefcase"></i>
+                <h2>Socials and Links</h2>
+              </div>
+              {website[0].map((value, index) => (
+                <div className="xp-item" key={index}>
+                  <div className="xp-job">
+                    {value.label}
+                    <br/>
+                    <a className="social__link" href={value.link} target='_blank'>{value.link}</a>
                   </div>
                 </div>
               ))}

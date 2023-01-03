@@ -9,12 +9,6 @@ export default function hobbies() {
         setHobbby(e.target.value)
     }
 
-    useEffect(()=> {
-        let value = JSON.stringify(hobby)
-        sessionStorage.setItem('hobby', value)
-    }, [hobby])
-
-    
   return (
     <div className="personal">
       <div className="title">Hobbies</div>

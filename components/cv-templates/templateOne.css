@@ -125,7 +125,7 @@
   color: #5695cd;
 }
 .resume .xp-item {
-  margin-bottom: 4em;
+  margin-bottom: 1.5em;
 }
 .resume .xp-item:last-child {
   margin-bottom: 0;
@@ -186,6 +186,13 @@
 .resume .lang-label {
   width: 8em;
 }
+
+.social__link {
+    font-size: 0.8rem;
+    color: #5695cd;
+    font-weight: 400;
+}
+
 /*  */
 
 .preview__body .resume .resume__main {
@@ -218,3 +225,8 @@
     font-size: 0.5rem !important;
 
 }
+
+.preview__body .social__link{
+    font-size: 0.4rem;
+}
+

@@ -31,11 +31,6 @@ export default function languages() {
   };
   // End of Language Buttons
 
-  useEffect(() => {
-    let value = JSON.stringify(langFields);
-    sessionStorage.setItem("language", value);
-  }, [langFields]);
-
   return (
     <div className="personal">
       <div className="title">Languages</div>

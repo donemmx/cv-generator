@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Accordion, AccordionTab } from "primereact/accordion";
 import { Tooltip } from "primereact/tooltip";
+import AppContext from "../../context/AppContext";
 
 export default function website() {
-  const [linksFields, setLinkFields] = useState([]);
+  const { website, setWebsite } = useContext(AppContext);
+  const [linksFields, setLinkFields] = website;
 
 
 //   Links Buttons 
@@ -28,11 +30,6 @@ const handleLinksInput = (index, event) => {
     setLinkFields(data);
   };
 // End of Links
-
-useEffect(()=> {
-    let value = JSON.stringify(linksFields)
-    sessionStorage.setItem('website', value)
-}, [linksFields])
 
   return (
     <div className="personal">

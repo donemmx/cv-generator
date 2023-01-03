@@ -31,11 +31,6 @@ export default function reference() {
   // End of Reference Buttons
 
 
-  useEffect(()=> {
-    let value = JSON.stringify(refFields)
-    sessionStorage.setItem('reference', value)
-}, [refFields])
-
   return (
     <div className="personal">
     <div className="title">References</div>

@@ -21,11 +21,6 @@ export default function professioanalSumary() {
 
   const header = renderHeader();
 
-  useEffect(()=> {
-    let value = JSON.stringify(professional)
-    sessionStorage.setItem('professional', value)
-}, [professional])
-
   return (
     <div className="personal">
     <div className="title">Professional Summary</div>
