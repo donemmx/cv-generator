@@ -122,14 +122,14 @@ export default function index() {
                 <button
                   className="btn__secondary"
                   onClick={handlePrint}
-                >ß
+                >
                   <i className="pi pi-download"></i>
                   Download
                 </button>
               ) : (
                 <button className="btn__secondary" onClick={() => openTemplates()}
                 >
-                  <i className="pi pi-download"></i>
+                  <i className="pi pi-eye"></i>
                   Preview
                 </button>
               )}
