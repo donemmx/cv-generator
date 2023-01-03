@@ -277,5 +277,11 @@ input:focus-within, textarea:focus-within{
 
 
 @media print {
-  @page { size: landscape; }
+  @page { size: landscape;
+      size: 80mm 50mm;
+  }
+  .pagebreak {
+    page-break-before: always;
+  }
 }
+
