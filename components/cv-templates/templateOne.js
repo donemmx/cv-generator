@@ -3,7 +3,7 @@ import AppContext from "../../context/AppContext";
 import DOMPurify from "isomorphic-dompurify";
 import moment from "moment";
 
-export default function templateOne({ condition }) {
+const templateOne = React.forwardRef(({condition}, ref) => {
   const { employment, setEmployment } = useContext(AppContext);
   const { summary, setSummary } = useContext(AppContext);
   const { personal, setPersonal } = useContext(AppContext);
@@ -16,13 +16,13 @@ export default function templateOne({ condition }) {
   const { reference, setReference } = useContext(AppContext);
   let safeHtml = DOMPurify.sanitize(summary[0]);
   return (
-    <div
+    <div ref={ref}
       className={
         condition ? "two-column resume" : " two-column resume adjustedPreview"
       }
     >
       {personal[0].map((value, index) => (
-        <section className="resume__section resume__header">
+        <section className="resume__section resume__header" key={index}>
           <div className="resume__content">
             <h1>
               {value.firstName} {value.lastName}
@@ -241,4 +241,6 @@ export default function templateOne({ condition }) {
       </div>
     </div>
   );
-}
+})
+
+export default templateOne

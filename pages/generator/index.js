@@ -11,18 +11,18 @@ import Languages from "../../components/forms/languages";
 import Colors from "../../components/forms/colors";
 // import { Dialog } from "primereact/dialog";
 import { useRouter } from "next/router";
-import { useReactToPrint } from 'react-to-print';
+import { useReactToPrint } from "react-to-print";
 import TemplateOne from "../../components/cv-templates/templateOne";
 
 export default function index() {
-    const componentRef = useRef();
+  const componentRef = useRef();
   const [title, setTitle] = useState("Untitled");
   const [open, setOpen] = useState(false);
-//   const [visible, setVisible] = useState(false);
+  //   const [visible, setVisible] = useState(false);
   const router = useRouter();
-//   const onHide = () => {
-//     setVisible(!visible);
-//   };
+  //   const onHide = () => {
+  //     setVisible(!visible);
+  //   };
 
   const route = () => {
     router.push("/");
@@ -39,7 +39,6 @@ export default function index() {
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
-
 
   return (
     <div className="generator">
@@ -106,7 +105,7 @@ export default function index() {
         <div className={open ? "generator__right w-70" : "generator__right"}>
           <div className="preview">
             <div className={open ? "adjustedBody" : "preview__body"}>
-                <TemplateOne condition={open} />
+              <TemplateOne condition={open} ref={componentRef} />
             </div>
           </div>
           <div className={open ? "preview__panel bg-black" : "preview__panel"}>
@@ -119,10 +118,21 @@ export default function index() {
                 {open ? "Close" : "Select Template"}
               </button>
               <Colors />
-              <button className="btn__secondary">
-                <i className="pi pi-download"></i>
-                Download
-              </button>
+              {open ? (
+                <button
+                  className="btn__secondary"
+                  onClick={handlePrint}
+                >ß
+                  <i className="pi pi-download"></i>
+                  Download
+                </button>
+              ) : (
+                <button className="btn__secondary" onClick={() => openTemplates()}
+                >
+                  <i className="pi pi-download"></i>
+                  Preview
+                </button>
+              )}
             </div>
           </div>
         </div>

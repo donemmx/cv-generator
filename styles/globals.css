@@ -274,3 +274,8 @@ input:focus-within, textarea:focus-within{
 .p-autocomplete-item{
   font-size: 0.85rem !important;
 }
+
+
+@media print {
+  @page { size: landscape; }
+}
