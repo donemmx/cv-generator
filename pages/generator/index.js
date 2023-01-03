@@ -18,6 +18,7 @@ export default function index() {
   const componentRef = useRef();
   const [title, setTitle] = useState("Untitled");
   const [open, setOpen] = useState(false);
+  const [openPreview, setOpenPreview] = useState(false);
   //   const [visible, setVisible] = useState(false);
   const router = useRouter();
   //   const onHide = () => {
@@ -35,6 +36,10 @@ export default function index() {
   const openTemplates = () => {
     setOpen(() => !open);
   };
+
+  const preview = () => {
+    setOpenPreview(()=> !openPreview)
+  }
 
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
