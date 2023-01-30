@@ -26,213 +26,272 @@
   size: A4;
 }
 
-.resume {
+.container {
   display: block;
   font-family: "Roboto", sans-serif;
   font-size: 13.0736px;
   font-weight: 400;
   line-height: 1.5;
 }
-.resume h1 {
-  font-size: 2.86em;
-  font-weight: 600;
-  letter-spacing: -0.5px;
-}
-.resume h2 {
-  font-size: 1.43em;
-  font-weight: 600;
-  line-height: 1;
-  margin-bottom: 0;
-}
-.resume p {
-  margin-bottom: 1em;
-}
-.resume p:last-child {
-  margin-bottom: 0;
-}
-.resume ul {
-  padding-left: 20px;
-}
-.resume .resume__header,
-.resume .resume__section {
-  font-family: "Open Sans", sans-serif;
-  font-size: 0.95em;
-}
-.resume .resume__header {
-  padding: 6em 4em 0;
-}
-.resume .resume__section {
-  margin-bottom: 4em;
-}
-.resume .resume__section:last-child {
-  padding-bottom: 0;
-}
-.resume .resume__section-title {
+
+
+
+
+.heading {
+  flex-direction: column;
   display: flex;
-  align-items: center;
-  margin-bottom: 1.43em;
-}
-.resume .resume__section-title > i {
-  margin-right: 0.63em;
-  font-size: 1.14em;
-  background-color: #5695cd;
-  color: #fff;
-  border: 0.25em solid #aacae6;
-  border-radius: 50%;
-  width: 2.51em;
-  height: 2.51em;
-  display: flex;
+  position: relative;
+  font-size: 16px;
+  font-weight:700;
+  text-transform: capitalize;
   align-items: center;
   justify-content: center;
-  line-height: 1.6;
+  word-wrap: break-all;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  padding-top: 20px;
+  z-index: 2;
+  
+
+  
 }
-.resume .resume__section-title > h2 {
-  margin-top: 0;
-  font-size: 1.5em;
+.header .subHeading {
+  color: var(--color);
+  font-weight: 500;
+  font-size: 1rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
-.resume .resume__columns {
-  overflow: hidden;
-  padding: 4em;
-  padding-top: 0;
+
+.header .links {
+  margin-top: 5px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  row-gap: 5px;
+  align-items: center;
+  justify-content: center;
+
 }
-.resume .resume__main {
-  float: left;
-  width: 75%;
-  padding-right: 6em;
+
+.header .link {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+  
 }
-.resume .resume__side {
-  float: left;
-  width: 25%;
+
+.header .link svg {
+  color: var(--color);
+  height: 14px;
+  width: 14px;
+  align-items: center;
+  justify-content: center;
 }
-.resume .other-info p > b {
-  color: #555;
+
+.main {
+  display: flex;
+  gap: 30px;
+  padding-top: 20px;
 }
-.resume .info-item {
-  margin-bottom: 0.2em;
-  font-weight: 300;
+
+.col1 {
+  flex: 1.3;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 750px;
+  word-wrap:break-word ;
 }
-.resume .info-item:last-child {
-  margin-bottom: 0;
-}
-.resume .info-label {
-  display: inline-block;
-  padding-right: 0.63em;
-  font-size: 1.14em;
-  min-width: 2.19em;
+.col2 {
+  flex: 1.3;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 750px;
   text-align: center;
+  word-wrap:break-word ;
 }
-.resume .info-label i {
-  color: #5695cd;
+
+.section .sectionTitle {
+  display: flex;
+  margin: 0 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  align-items: flex-start;
+  width: 90%;
+  text-transform: capitalize;
+  border-bottom: 0.5px solid rgba(85, 85, 85, 0.2);
 }
-.resume .xp-item {
-  margin-bottom: 1.5em;
+
+.section .content {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  align-items: flex-start;
+ 
+
 }
-.resume .xp-item:last-child {
-  margin-bottom: 0;
+
+.section .content .item {
+  border-bottom: 1px dotted lightgray;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 30px;
+ 
+
 }
-.resume .xp-job {
-  font-size: 1.14em;
+.section .content .item:last-child {
+  border-bottom: none;
+  
+}
+
+.content .title {
+  font-weight: 550;
+  font-size: 0.9rem;
+  line-height: 1rem;
+  margin: 5px 15px 0 10px;
+  padding-right: 5%;
+  gap: 4px;
+  
+ 
+}
+.content .degree{
+  font-weight: 550;
+  font-size: 0.9rem;
+  line-height: 1rem;
+  padding-left: 5%;
+  line-height: 1rem;
+  margin: 5px 5px 0 15px;
+  
+}
+
+.content .subTitle {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.content .overview {
+  font-size: 0.875rem;
+  padding-top: 20px;
+}
+
+.content .link {
+  display: flex;
+  gap: 5px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+
+.content .date {
+  display: flex;
+  gap: 5px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-left: 20px;
+  
+}
+.content .description{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  font-size: 14px;
+  font-weight:600;
+  word-spacing: 1.5px;
+  line-height: 1.4em;
+  font-weight: 500;
+  width: 90%;
+  margin:0 0 0 15px;
+  color: #555;
+  padding: 1px;
+  border-top: 0.5px dotted rgba(0, 0, 0, 0.047);
+  border-bottom:  0.5px dotted rgba(0, 0, 0, 0.045);
+}
+.content .description li{
+  list-style: none;
+}
+.content .label{
+  font-size: 0.9rem;
   font-weight: 600;
-  line-height: 1.25;
+  display: flex;
+  align-items: flex-start;
+
 }
-.resume .xp-job span,
-.resume .xp-job small {
+.labellink{
+  font-size: 0.7rem;
   font-weight: 400;
 }
-.resume .xp-job small {
-  font-size: 0.9em;
+
+.content .date svg {
+  height: 16px;
+  width: 16px;
 }
-.resume .xp-date {
-  font-size: 0.8em;
-  margin-top: 0.3em;
-  margin-bottom: 1em;
-  color: #5695cd;
+
+.content .points,
+.numbered {
+  padding-left: 18px;
+  font-size: 0.875rem;
 }
-.resume .extra {
-  margin-bottom: 2em;
+
+.numbered li {
+  list-style-type:disc;
 }
-.resume .extra:last-child {
-  margin-bottom: 0;
+
+.hidden {
+  display: none;
 }
-.resume .extra-info small {
+.container{
+  margin: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.241);
+  font-size: 13.0736px;
+  font-weight: 400;
+  line-height: 1.5;
+  display: block;
+  font-family: "Roboto", sans-serif;
+  padding: 30px;
+  
+}
+ .extrainfo small {
   color: #666;
   display: inline-block;
-  font-size: 0.7em;
+  font-size: 0.9rem;
 }
-.resume .extra-details,
-.resume .extra-details__progress {
-  border-radius: 6px;
+.extrainfo{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 10px;
+  font-size: 0.9rem;;
+  word-spacing: 5px;
+  font-weight: 550;
+  margin: 5px 0 0 15px;
 }
-.resume .extra-details {
-  margin-top: 0.5em;
-  background-color: #d1d9e1;
-  width: 100%;
-  height: 5px;
-  position: relative;
+.extrainfo small {
+  color: #666;
+  display: inline-block;
+  font-size: 0.9rem
 }
-.resume .extra-details__progress {
-  background-color: #5695cd;
-  height: 5px;
-  position: absolute;
-  top: 0;
-  left: 0;
+.extrainfo1 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding-left: 10px;
+  line-height: 14px;
+  font-size: 0.9rem;
+  font-weight: 550;
+  margin: 5px 0 0 15px;
+  word-spacing: 1.5px;
 }
-.resume .lang-item {
-  margin-bottom: 2em;
-}
-.resume .lang-item:last-child {
-  margin-bottom: 0;
-}
-.resume .lang-label {
-  width: 8em;
-}
-
-.social__link {
-    font-size: 0.8rem;
-    color: #5695cd;
-    font-weight: 400;
+.icon{
+  font-size: 0.9em;
+  justify-content: space-around;
+  margin-right: 8px;
 }
 
-/*  */
-
-.preview__body .resume .resume__main {
-  float: left;
-  width: 70%;
-  padding-right: 2em;
-}
-
-.preview__body .resume .resume__section-title > i {
-  height: 0.6rem;
-  width: 0.6rem;
-}
-
-.preview__body .resume .resume__columns {
-  padding: 2rem;
-}
-
-.preview__body .resume .resume__section {
-  margin-bottom: 2em;
-}
-
-.preview__body .info-label i {
-  font-size: 0.6rem;
-}
-
-/*  */
-/*  */
-
-.adjustedPreview  {
-    font-size: 0.5rem !important;
-
-}
-
-.preview__body .social__link{
-    font-size: 0.4rem;
-}
-
-.title{
-    color: #000 !important;
-    font-weight: 900 !important;
-    letter-spacing: 0px !important;
-}
 

@@ -1,7 +1,22 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import AppContext from "../../context/AppContext";
+import styles from '../cv-templates/templateOne.module.css'
 import DOMPurify from "isomorphic-dompurify";
 import moment from "moment";
+import {FiAtSign, FiLink, FiLinkedin, FiPhone} from 'react-icons/fi';
+import{FcCellPhone} from 'react-icons/fc';
+import{FaUserGraduate} from 'react-icons/fa'
+import{CiUser} from 'react-icons/ci';
+
+
+import {GrLocation} from 'react-icons/fc'
+import {BsFillBriefcaseFill, BsFillRecord2Fill, BsFillTelephoneFill, BsHouse} from 'react-icons/bs'
+import{BiBuilding, BiBuildingHouse} from 'react-icons/bi'
+import {HiPencilAlt } from 'react-icons/hi'
+BiBuildingHouse
+import { Calendar } from "react-feather";
+AiFillMail
+import {AiFillMail} from 'react-icons/ai'
 
 const templateOne = React.forwardRef(({condition}, ref) => {
   const { employment, setEmployment } = useContext(AppContext);
@@ -16,6 +31,22 @@ const templateOne = React.forwardRef(({condition}, ref) => {
   const { reference, setReference } = useContext(AppContext);
   const { pic, setPic } = useContext(AppContext);
   let safeHtml = DOMPurify.sanitize(summary[0]);
+
+  const logo=(
+    <HiPencilAlt 
+                  style={{
+                    backgroundColor: colors[0] ?? "#5695cd",
+                    borderColor: colors[0] ?? "#5695cd",
+                  }}/>
+  )
+  
+
+//   useEffect(()=> {
+//     setColumns([[projectSection, workExpSection],[
+//       projectSection, workExpSection
+//     ],
+//   ]);
+// },[]);
   return (
     <div ref={ref}
       className={
@@ -23,225 +54,331 @@ const templateOne = React.forwardRef(({condition}, ref) => {
       }
     >
       {personal[0].map((value, index) => (
-        <section className="resume__section resume__header" key={index}>
-          <div className="resume__content">
-            <h1>
+        
+        <section className={styles.container} key={index}>
+          
+          <div className={styles.header}>
+         
+            <p className={styles.heading}>
               {value.firstName} {value.lastName}
-            </h1>
-            <div className="info-item">
-              <span className="info-label">
-                <i className="pi pi-map"
-                style={{color: colors[0] ?? '#5695cd'}}></i>
-              </span>
-              <span className="info-text">{value.address}</span>
+            </p>
+            {/* <p className={styles.subHeading}>jjjjj</p> */}
+           <div className={styles.links}>
+             {value.email ? (
+                <a className={styles.link} >
+                  <AiFillMail  style={{color: colors[0] ?? '#5695cd'}}/>
+                  {value.email}
+                </a>
+              ) : (
+                <span />
+              )}
+              {value.phone ? (
+                <a className={styles.link} >
+                  <BsFillTelephoneFill style={{color: colors[0] ?? '#5695cd'}}/>
+                  {value.phone}
+                </a>
+              ) : (
+                <span />
+              )}
+              {value.address ? (
+                <a className={styles.link} >
+                 <BsHouse  style={{color: colors[0] ?? '#5695cd'}}/>
+                  {value.address},{value.city}, {value.country}
+                </a>
+              ) : (
+                <span />
+                
+              )}
+             
+             
+          
+           </div>
+           
             </div>
-            <div className="info-item">
-              <span className="info-label">
-                <i className="pi pi-envelope"
-               style={{color: colors[0] ?? '#5695cd'}}></i>
-              </span>
-              <span className="info-text">{value.email}</span>
-            </div>
-            <div className="info-item">
-              <span className="info-label">
-                <i className="pi pi-phone"
-               style={{color: colors[0] ?? '#5695cd'}}></i>
-              </span>
-              <span className="info-text">{value.phone}</span>
-            </div>
-          </div>
-        </section>
-      ))}
-      <div className="resume__columns">
-        <div className="resume__main">
-          <section className="resume__section resume__summary">
-            <div className="resume__content">
-              <div className="resume__section-title">
-                <i
-                  className="pi pi-pencil"
-                  style={{
-                    backgroundColor: colors[0] ?? "#5695cd",
-                    borderColor: colors[0] ?? "#5695cd",
-                  }}
-                ></i>
-                <h2 className="title">Professional Summary</h2>
-              </div>
-              <div className="other">
-                <div className="other-info">
-                  <div dangerouslySetInnerHTML={{ __html: safeHtml }} />
+           
+            <div className={styles.col1}>
+            
+            <div className={`${styles.section} ${styles.project}`} >
+            
+            <div className={`${styles.sectionTitle}`} >
+            Professional Summary    
+               </div>
+              <div className={styles.content}>
+              <div className={styles.description}>
+                  <div  dangerouslySetInnerHTML={{ __html: safeHtml }} />
                 </div>
-              </div>
             </div>
-          </section>
-          <section className="resume__section resume__experience">
-            <div className="resume__content">
-              <div className="resume__section-title">
-                <i className="pi pi-briefcase"
-               style={{backgroundColor: colors[0] ?? '#5695cd', borderColor: colors[0] ?? '#5695cd'}}></i>
-                <h2 className="title">Education</h2>
-              </div>
+          
+                </div>
+                </div> 
+            
+              <div className={styles.col1}>
+              <div className={`${styles.section} ${styles.workExp}`}>
+              
+         
+        
+            <div className={`${styles.sectionTitle}`} >
+               Education        
+               </div>
               {education[0].map((value, index) => (
-                <div className="xp-item" key={index}>
-                  <div className="xp-job">
+                <div className={styles.content}>
+                <div className={styles.edsection} key={index}>
+                  
+                  <div className={styles.title}><FaUserGraduate className={styles.icon} style={{color: colors[0] ?? '#5695cd'}}/>
                     {value.school}
-                    <br />
-                    <span>{value.degree}</span>
-                  </div>
-                  <div className="xp-date"
+                    </div>
+                          -
+                    <div className={styles.degree}>{value.degree}</div>
+                    
+                    </div>
+                  <div className={styles.date}
+                  
                    style={{
                     color: colors[0] ?? "#5695cd",
                   }}>
+                     <Calendar style={{color: colors[0] ?? '#5695cd'}} className={styles.icon}/>
                   {moment(value.startDate).format(
                         "MMMM YYYY"
                       )}
                       - {moment(value.endDate).format("MMMM YYYY")}
                   </div>
-                  <div className="xp-detail">
+              <div className={styles.description}>
                     <ul>
                       <li>{value.description}</li>
+        
+          
                     </ul>
                   </div>
+                  
                 </div>
               ))}
-            </div>
-          </section>
-          <section className="resume__section resume__experience">
-            <div className="resume__content">
-              <div className="resume__section-title">
-                <i
-                  className="pi pi-building"
-                  style={{
-                    backgroundColor: colors[0] ?? "#5695cd",
-                    borderColor: colors[0] ?? "#5695cd",
-                  }}
-                ></i>
-                <h2 className="title">Employment History</h2>
+          
+         
+        
+    </div>
               </div>
+              
+             
+              <div className={styles.col1}>
+                
+              
+                <div className={`${styles.section} ${styles.project}`}>
+                   
+                  <section className="resume__section resume__experience">
+                  <div className={`${styles.sectionTitle}`} >
+                    Employment History
+                    </div>
+                  
+            
+              
               {employment[0].map((value, index) => (
-                <div className="xp-item" key={index}>
-                  <div className="xp-job">
+                <div className={styles.content}>
+                <div className={styles.edsection} key={index}>
+                   
+ 
+                  <div className={styles.title}>
+                  <BsFillBriefcaseFill  className={styles.icon} style={{color: colors[0] ?? '#5695cd'}}/>
                     {value.title}
-                    <br />
-                    <span>{value.employer}</span>
+                    
+                    </div>
+                    -
+                    <div className={styles.degree}>{value.employer}</div>
+                  
                   </div>
-                  <div className="xp-date" 
+                  <div className={styles.date}
                   style={{
                     color: colors[0] ?? "#5695cd",
                   }}>
+                     <Calendar style={{color: colors[0] ?? '#5695cd'}} className={styles.icon}/>
                   {moment(value.startDate).format(
                         "MMMM YYYY"
                       )}
                       - {moment(value.endDate).format("MMMM YYYY")}
                   </div>
-                  <div className="xp-detail">
+                  <div className={styles.description}>
                     <ul>
                       <li>{value.description}</li>
                     </ul>
                   </div>
+                
                 </div>
               ))}
-            </div>
+            
           </section>
+          </div>
           
-          <section className="resume__section resume__experience">
+          <div className={styles.col1}>
+                      
             <div className="resume__content">
-              <div className="resume__section-title">
-                <i className="pi pi-link"
-               style={{backgroundColor: colors[0] ?? '#5695cd', borderColor: colors[0] ?? '#5695cd'}}></i>
-                <h2 className="title">Socials and Links</h2>
-              </div>
+              
               {website[0].map((value, index) => (
                 <div className="xp-item" key={index}>
-                  <div className="xp-job">
+                  <div className={styles.section}>
+                  <div className={styles.sectionTitle}>
+                      Websites & Social Links
+                      </div>
+                      
+                  <div className={styles.extrainfo}>
                     {value.label}
                     <br />
+                    
+                    
                     <a
-                      className="social__link"
+                      className={styles.labellink}
+                      style={{color: colors[0] ?? '#5695cd'}}
                       href={value.link}
+
+
                       target="_blank"
                     >
+                      <FiLink className={styles.icon}/>
                       {value.link}
                     </a>
+                   
                   </div>
+                </div>
                 </div>
               ))}
             </div>
-          </section>
-
-          <section className="resume__section resume__summary">
-            <div className="resume__content">
-              <div className="resume__section-title">
-                <i
-                  className="pi pi-qrcode"
-                  style={{
-                    backgroundColor: colors[0] ?? "#5695cd",
-                    borderColor: colors[0] ?? "#5695cd",
-                  }}
-                ></i>
-                <h2 className="title">Hobby</h2>
-              </div>
-              <div className="other">
-                <div className="other-info">
-                  <div>
-                    {hobbies[0]}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-        <div className="resume__side">
-          <section className="resume__section resume__skills">
-            <div className="resume__content">
-              <div className="resume__section-title">
-                <i className="pi pi-align-center"
-               style={{backgroundColor: colors[0] ?? '#5695cd', borderColor: colors[0] ?? '#5695cd'}}></i>
-                <h2>Skills</h2>
+         
+          
+         
+            <div className={styles.section}>
+              <div className={`${styles.sectionTitle}`}>
+                Skills
               </div>
               {skill[0].map((value, index) => (
-                <div className="resume__text" key={index}>
-                  <div className="extra">
-                    <div className="extra-info">{value.name}</div>
-                    <div className="extra-details">
-                      <div
-                        className="extra-details__progress"
-                        style={{ width: "100%" }}
-                      ></div>
-                    </div>
+                <div  key={index}>
+
+                    <div className={styles.extrainfo1}>
+                      {value.name}
+                      </div>
                   </div>
-                </div>
+                
               ))}
             </div>
-          </section>
-          <section className="resume__section resume__languages">
-            <div className="resume__content">
-              <div className="resume__section-title">
-                <i className="pi pi-globe"
-                style={{backgroundColor: colors[0] ?? '#5695cd', borderColor: colors[0] ?? '#5695cd'}}></i>
-                <h2 className="title">Languages</h2>
-              </div>
+          
+
+            <div className={styles.section}>
+            <div className={`${styles.sectionTitle}`} >
+                 Hobbies     
+               </div>
+              
+                <div className={styles.extrainfo1}>
+                  <div>
+                  {hobbies[0]
+                ? (
+                  
+                  
+                <div  >
+                  {hobbies[0]}
+                </div>
+              ) : (
+                <span />
+              )}
+                    {/* <BsFillRecord2Fill/>
+                    {hobbies[0]} */}
+                    
+                  </div>
+                </div>
+            </div>
+         
+
+          
+            <div className={styles.section}>
+            <div className={`${styles.sectionTitle}`} >
+               Languages      
+               </div>
+            
               {language[0].map((value, index) => (
                 <div className="extra" key={index}>
-                  <div className="extra-info">
+                  
+                  <div className={styles.extrainfo}>
                     {value.language}
                     <br></br>
                     <small>{value.level}</small>
                   </div>
-                  <div className="extra-details">
-                    <div
-                      className="extra-details__progress"
-                      style={{ width: "100%" }}
-                    ></div>
-                  </div>
+                 
                 </div>
               ))}
             </div>
-          </section>
-        </div>
-      
-      </div>
-    </div>
-  );
-})
+           
+          
+          <div className={styles.col1}>
+         
+        
+    <div className="resume__content">
+ 
+            {reference[0].map((value, index) => (
+                
+                <div className="xp-item" key={index}>
+                  <div className={styles.section}>
+                 <div className={`${styles.sectionTitle}`} >
+                 Reference      
+               </div>
+               <div className={styles.extrainfo}>
+                  <p className={styles.links}>
+                    {value.name ? (
+                <a className={styles.link} >
+                  <CiUser style={{color: colors[0] ?? '#5695cd'}} className={styles.icon}/>
+                  {value.name}
+                </a>
+              ) : (
+                <span />
+              )}
+                  </p>
+                  <small className={styles.links}>
+                  {value.comapny ? (
+                <a className={styles.link} >
+                  <BiBuilding style={{color: colors[0] ?? '#5695cd'}} className={styles.icon}/>
+                  {value.comapny}
+                </a>
+              ) : (
+                <span />
+              )}
+                  </small>
 
-export default templateOne
+                  <small className={styles.links}>
+                  {value.phone ? (
+                <a className={styles.link} >
+                  <BsFillTelephoneFill style={{color: colors[0] ?? '#5695cd'}} className={styles.icon}/>
+                  {value.phone}
+                </a>
+              ) : (
+                <span />
+              )}
+                  </small>
+                  <small className={styles.links}>
+                  {value.email ? (
+                <a className={styles.link} >
+                  <AiFillMail style={{color: colors[0] ?? '#5695cd'}} className={styles.icon}/>
+                  {value.email}
+                </a>
+              ) : (
+                <span />
+              )}
+                  </small>
+                  </div>
+                 
+        
+                  </div>
+                </div>
+              ))}
+</div>
+</div>
+          
+
+                </div>
+
+                </div>
+              
+
+          </section>
+          
+  ))}
+  
+  </div>
+)});
+
+
+export default templateOne;
