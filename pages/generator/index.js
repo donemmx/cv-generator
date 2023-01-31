@@ -14,6 +14,7 @@ import { useRouter } from "next/router";
 import { useReactToPrint } from "react-to-print";
 import TemplateOne from "../../components/cv-templates/templateOne";
 import TemplateTwo from "../../components/cv-templates/templateTwo";
+import Image from 'next/image'
 
 export default function index() {
   const componentRef = useRef();
@@ -147,11 +148,32 @@ export default function index() {
         <div className="overlay__templates">
           <div className="templates__main py-5">
             <div className="small__templaes"></div>
-            <div className="small__templaes"></div>
-            <div className="small__templaes"></div>
-            <div className="small__templaes"></div>
-            <div className="small__templaes"></div>
-            <div className="small__templaes"></div>
+            <div className="small__templaes">
+            <Image 
+            src="/assets/coming-soon.jpg"
+            width={100}
+            height={100}
+            className="cv__temp"
+
+           />
+            </div>
+            <div className="small__templaes">
+            <Image 
+            src="/assets/coming-soon.jpg"
+            width={100}
+            height={100}
+            className="cv__temp"
+           />
+            </div>
+            <div className="small__templaes">
+            <Image 
+            src="/assets/coming-soon.jpg"
+            width={100}
+            height={100}
+            className="cv__temp"
+
+           />
+            </div>
           </div>
         </div>
       ) : (
