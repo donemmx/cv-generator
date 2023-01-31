@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import AppContext from "../../context/AppContext";
-import styles from '../cv-templates/templateOne.module.css'
+import styles from './templateOne.module.css'
 import DOMPurify from "isomorphic-dompurify";
 import moment from "moment";
 import {FiAtSign, FiLink, FiLinkedin, FiPhone} from 'react-icons/fi';
