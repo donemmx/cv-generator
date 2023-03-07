@@ -64,14 +64,7 @@ const templateOne = React.forwardRef(({condition}, ref) => {
             </p>
             {/* <p className={styles.subHeading}>jjjjj</p> */}
            <div className={styles.links}>
-             {value.email ? (
-                <a className={styles.link} >
-                  <AiFillMail  style={{color: colors[0] ?? '#5695cd'}}/>
-                  {value.email}
-                </a>
-              ) : (
-                <span />
-              )}
+             
               {value.phone ? (
                 <a className={styles.link} >
                   <BsFillTelephoneFill style={{color: colors[0] ?? '#5695cd'}}/>
@@ -83,7 +76,7 @@ const templateOne = React.forwardRef(({condition}, ref) => {
               {value.address ? (
                 <a className={styles.link} >
                  <BsHouse  style={{color: colors[0] ?? '#5695cd'}}/>
-                  {value.address},{value.city}, {value.country}
+                  {value.address} {value.city} {value.country}
                 </a>
               ) : (
                 <span />
@@ -141,15 +134,7 @@ const templateOne = React.forwardRef(({condition}, ref) => {
                         "MMMM YYYY"
                       )}
                       - {moment(value.endDate).format("MMMM YYYY")}
-                  </div>
-              <div className={styles.description}>
-                    <ul>
-                      <li>{value.description}</li>
-        
-          
-                    </ul>
-                  </div>
-                  
+                  </div> 
                 </div>
               ))}
           
