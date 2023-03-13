@@ -124,20 +124,24 @@
     border-radius: 10px;
 }
 
-.yellow{
-    background: #fff66d;
+.black{
+  background: #000;
+}
+
+.red{
+    background: #eb5844;
 }
 .green{
     background: #4bfbba;
 }
 .blue{
-    background: #9aebfe;
+    background: #3ad1f4;
 }
 .gold{
     background: #fed78c;
 }
 .gray{
-    background: #e4e4e4;
+    background: #dfd4d4;
 }
 
 
